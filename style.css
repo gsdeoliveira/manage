@@ -2,6 +2,7 @@
 
 :root {
     --BrightRed: hsl(12, 88%, 59%);
+    --CtaBtnHover: #F88F73;
     --DarkBlue: hsl(228, 39%, 23%);
 
     --DarkGrayishBlue: hsl(227, 12%, 61%);
@@ -43,3 +44,109 @@ h1, h2, h3, h4 {
 p {
     color: var(--DarkGrayishBlue);
 }
+
+header, section, footer {
+    padding: 3rem 10rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainnav ul {
+    display: flex;
+}
+
+.mainnav ul li a {
+    padding: 0 1rem;
+    color: var(--DarkBlue);
+}
+
+.mainnav ul li a:hover {
+    color: var(--DarkGrayishBlue);
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    background-color: var(--BrightRed);
+    color: var(--VeryPaleRed);
+    border-radius: 50px;
+}
+
+.cta-btn:hover {
+    background-color: var(--CtaBtnHover);
+}
+
+.graphs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.graphs h1 {
+    font-size: 4.8rem;
+}
+
+.graphs p {
+    margin: 2rem 0 3rem 0;
+}
+
+.differences {
+    display: flex;
+    gap: 3rem;
+}
+
+.differences-left p {
+    width: 60%;
+    margin-top: 2rem;
+}
+
+.differences-right span {
+    background-color: var(--BrightRed);
+    color: var(--VeryPaleRed);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    margin-right: 2rem;
+}
+
+.differences-right h3 {
+    font-size: 1.6rem;
+}
+
+
+.differences-right p {
+    margin: 2rem 0 4rem 8rem;
+}
+
+.comments h2 {
+    margin: 5rem 0 5rem 0;
+}
+
+.comments {
+    text-align: center;
+}
+
+.glider {
+    overflow: hidden;
+}
+
+.glider-item img {
+    width: 7.5rem;
+}
+
+.glider-item .name {
+    color: var(--DarkBlue);
+    margin: 2rem 0;
+}
+
+.glider-item .comment {
+    padding: 0 5rem;
+}
+
+.comments .cta-btn {
+    position: relative;
+    top: 5rem;
+}
+
