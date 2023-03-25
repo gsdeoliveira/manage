@@ -39,6 +39,19 @@ body {
     margin: 0 auto;
 }
 
+
+body.dark {
+    background-image: url(images/bg-dark.svg);
+    background-color: var(--DarkMode);
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    list-style-type: none;
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
 h1, h2, h3, h4 {
     font-size: 3.2rem;
     color: var(--DarkBlue);
@@ -56,9 +69,7 @@ header, section, footer {
     padding: 3rem 10rem;
 }
 
-body.dark {
-	background: var(--DarkMode);
-}
+
 
 .toggle-dark {
     position: fixed;
@@ -120,6 +131,11 @@ body.dark {
     justify-content: space-between;
 }
 
+.dark .top .logo g path, .dark .top .mainnav ul li a {
+    fill: var(--VaryLightGray);
+    color: var(--VaryLightGray);
+}
+
 .mainnav ul {
     display: flex;
 }
@@ -130,6 +146,10 @@ body.dark {
 }
 
 .mainnav ul li a:hover {
+    color: var(--DarkGrayishBlue);
+}
+
+.dark .mainnav ul li a:hover {
     color: var(--DarkGrayishBlue);
 }
 
@@ -147,6 +167,10 @@ body.dark {
 
 .burger-menu {
     display: none;
+}
+
+.dark .burger-icon svg path {
+    fill: var(--VaryLightGray);
 }
 
 /*--------------- SECTION GRAPHS ---------------*/
@@ -197,8 +221,12 @@ body.dark {
 .differences-right h3 {
     font-size: 1.6rem;
     background-color: var(--VeryPaleRed);
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 1rem 0;
+}
+
+.dark .differences-right h3 {
+    background-color: var(--DarkBlue);
 }
 
 
@@ -227,6 +255,10 @@ body.dark {
 .glider-item .name {
     color: var(--DarkBlue);
     margin: 2rem 0;
+}
+
+.dark .glider-item .name {
+    color: var(--VaryLightGray);
 }
 
 .glider-item .comment {
@@ -355,6 +387,13 @@ form input:required:not(:placeholder-shown):invalid ~ span {
 
     body {
         background: url(images/bg-simplify-section-mobile.svg) top no-repeat;
+    }
+
+    body.dark {
+        background-image: url(images/bg-dark-mobile.svg);
+        background-color: var(--DarkMode);
+        background-position: top;
+        background-repeat: no-repeat;
     }
 
     .top .mainnav, .top .cta-btn {
