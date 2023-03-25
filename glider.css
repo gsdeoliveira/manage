@@ -54,7 +54,7 @@
   z-index: 2;
   font-size: 40px;
   text-decoration: none;
-  left: -23px;
+  left: 5px;
   border: 0;
   top: 30%;
   cursor: pointer;
@@ -71,7 +71,7 @@
   color: #a89cc8;
 }
 .glider-next {
-  right: -23px;
+  right: 5px;
   left: auto;
 }
 .glider-next.disabled,
@@ -91,11 +91,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   padding: 0;
 }
 .glider-dot {
-  border: 0;
+  border: 1px solid var(--BrightRed);
   padding: 0;
   user-select: none;
   outline: none;
@@ -103,7 +103,6 @@
   cursor: pointer;
   color: #ccc;
   border-radius: 999px;
-  background: #ccc;
   width: 12px;
   height: 12px;
   margin: 7px;
@@ -111,7 +110,7 @@
 .glider-dot:hover,
 .glider-dot:focus,
 .glider-dot.active {
-  background: #a89cc8;
+  background: var(--BrightRed);
 }
 @media(max-width: 36em){
   .glider::-webkit-scrollbar {

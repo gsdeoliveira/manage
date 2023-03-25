@@ -4,6 +4,7 @@
     --BrightRed: hsl(12, 88%, 59%);
     --CtaBtnHover: #F88F73;
     --DarkBlue: hsl(228, 39%, 23%);
+    --DarkMode: #292C35;
 
     --DarkGrayishBlue: hsl(227, 12%, 61%);
     --VeryDarkBlue: hsl(233, 12%, 13%);
@@ -30,15 +31,21 @@ body, html {
 }
 
 body {
-    margin: 0 auto;
+    background: url(images/bg-simplify-section-desktop.svg) top no-repeat;
+    background-color: var(--VaryLightGray);
     font-family: 'Be Vietnam Pro', sans-serif;
     list-style-type: none;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
     font-size: 3.2rem;
     color: var(--DarkBlue);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4 {
+    color: var(--VaryLightGray);
 }
 
 p {
@@ -48,6 +55,65 @@ p {
 header, section, footer {
     padding: 3rem 10rem;
 }
+
+body.dark {
+	background: var(--DarkMode);
+}
+
+.toggle-dark {
+    position: fixed;
+    opacity: .5;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 5rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem;
+	position: relative;
+	height: 2.6rem;
+	width: 5rem;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+	height: 2.2rem;
+	width: 2.2rem;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(2.4rem);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
+
+
+
+/*--------------- TOP ---------------*/
 
 .top {
     display: flex;
@@ -69,14 +135,21 @@ header, section, footer {
 
 .cta-btn {
     padding: 1rem 2rem;
+    width: fit-content;
     background-color: var(--BrightRed);
-    color: var(--VeryPaleRed);
+    color: var(--VaryLightGray);
     border-radius: 50px;
 }
 
 .cta-btn:hover {
     background-color: var(--CtaBtnHover);
 }
+
+.burger-menu {
+    display: none;
+}
+
+/*--------------- SECTION GRAPHS ---------------*/
 
 .graphs {
     display: flex;
@@ -93,6 +166,16 @@ header, section, footer {
     margin: 2rem 0 3rem 0;
 }
 
+.graphs div {
+    width: 50%;
+}
+
+.graphs img {
+    width: 100%;
+}
+
+/*--------------- SECTION DIFFERENCES ---------------*/
+
 .differences {
     display: flex;
     gap: 3rem;
@@ -105,7 +188,7 @@ header, section, footer {
 
 .differences-right span {
     background-color: var(--BrightRed);
-    color: var(--VeryPaleRed);
+    color: var(--VaryLightGray);
     padding: 1rem 2rem;
     border-radius: 30px;
     margin-right: 2rem;
@@ -113,12 +196,17 @@ header, section, footer {
 
 .differences-right h3 {
     font-size: 1.6rem;
+    background-color: var(--VeryPaleRed);
+    border-radius: 10px;
+    padding: 1rem 0;
 }
 
 
 .differences-right p {
     margin: 2rem 0 4rem 8rem;
 }
+
+/*--------------- SECTION COMMENTS ---------------*/
 
 .comments h2 {
     margin: 5rem 0 5rem 0;
@@ -147,6 +235,263 @@ header, section, footer {
 
 .comments .cta-btn {
     position: relative;
-    top: 5rem;
+    top: 10rem;
 }
 
+/*--------------- SECTION LAST ---------------*/
+
+.last {
+    background-image: url(images/bg-banner.svg);
+    background-color: var(--BrightRed);
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rem;
+}
+
+.last h2 {
+    color: var(--VaryLightGray);
+}
+
+.last .cta-btn {
+    background-color: var(--VaryLightGray);
+    color: var(--BrightRed);
+}
+
+.last .cta-btn:hover {
+    color: var(--CtaBtnHover);
+}
+
+
+/*--------------- FOOTER ---------------*/
+footer {
+    background-color: var(--VeryDarkBlue);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.socials svg {
+    padding: 0 .5rem;
+}
+
+.socials svg:hover path {
+    fill: var(--BrightRed);
+}
+
+.socials svg:first-child {
+    padding-left: 0;
+}
+
+footer .logo g:first-child path {
+    fill: var(--VaryLightGray);
+}
+
+footer ul li {
+    padding: .5rem 0;
+}
+
+footer ul li a {
+    color: var(--VaryLightGray);
+}
+
+footer ul li a:hover {
+    color: var(--BrightRed);
+}
+
+footer .form-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer form {
+    position: relative;
+}
+
+footer form input {
+    border: none;
+}
+
+footer form input:first-child {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+}
+
+footer form input:first-child ~ span {
+    display: none;
+    color: #FF0000;
+    font-style: italic;
+    position: absolute;
+    top: 5rem;
+    left: 1.5rem;
+}
+
+form input:required:not(:placeholder-shown):invalid ~ span {
+    display: block;
+}
+
+@media (max-width: 980px) {
+    body, html {
+        font-size: 55%;
+    }
+
+    header, section, footer {
+        padding: 3rem 5rem;
+    }
+}
+
+@media (max-width: 780px) {
+    
+    header, section, footer {
+        padding: 3rem 3rem;
+    }
+
+    body {
+        background: url(images/bg-simplify-section-mobile.svg) top no-repeat;
+    }
+
+    .top .mainnav, .top .cta-btn {
+        display: none;
+    }
+
+    /*--------------- TOP ---------------*/
+
+    .burger-container {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: var(--Black);
+        opacity: 0;
+        left: 0;
+        top: 72px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-navigation {
+        display: none;
+        background-color: var(--VaryLightGray);
+        padding: 5rem 0;
+        border-radius: 10px;
+        position: absolute;
+        top: 100px;
+        left: 5%;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .burger-navigation li {
+        padding: 1rem 0;
+    }
+    
+    .burger-navigation li a {
+        color: var(--DarkBlue);
+        font-size: 2rem;
+    }
+
+    /*--------------- SECTION GRAPHS ---------------*/
+
+    .graphs {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .graphs h1, p {
+        text-align: center;
+    }
+
+    .graphs .cta-btn {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;      
+    }
+
+    .graphs div {
+        width: 100%;
+    }
+   
+    /*--------------- SECTION DIFFERENCES ---------------*/
+
+    .differences {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .differences h2, .differences p {
+        text-align: center;
+    }
+
+    .differences h3 {
+        margin-left: 15rem;
+    }
+
+    .differences-left p {
+        width: 100%;
+    }
+
+    .differences-right p {
+        margin: 2rem 0 2rem 0;
+    }
+
+    /*--------------- SECTION LAST ---------------*/
+
+    .last {
+        flex-direction: column;
+        padding: 7rem 3rem;
+    }
+
+    .last a.cta-btn {
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+
+    .last h2 {
+        font-size: 4rem;
+    }
+
+    /*--------------- FOOTER ---------------*/
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .logo-socials .socials {
+        margin: 2rem 0;
+    }
+
+    footer ul {
+        text-align: center;
+    }
+
+    footer form {
+        margin: 2rem 0;
+    }
+
+}
+@media (max-width: 600px) {
+    .differences h3 {
+        margin-left: 10rem;
+    }
+}
+
+@media (max-width: 500px) {
+    html, body {
+        font-size: 50%;
+    }
+    .differences h3 {
+        margin-left: 0rem;
+    }
+}
