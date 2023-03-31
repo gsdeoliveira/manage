@@ -278,12 +278,15 @@ header, section, footer {
     background-repeat: no-repeat;
     background-position: top;
     display: flex;
+    padding: 7rem 3rem;
     justify-content: space-between;
     margin-top: 30rem;
 }
 
 .last h2 {
     color: var(--VaryLightGray);
+    text-align: center;
+    flex-grow: 2;
 }
 
 .last .cta-btn {
@@ -341,6 +344,7 @@ footer .form-copy {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: end;
 }
 
 footer form {
@@ -488,7 +492,6 @@ form input:required:not(:placeholder-shown):invalid ~ span {
 
     .last {
         flex-direction: column;
-        padding: 7rem 3rem;
     }
 
     .last a.cta-btn {
