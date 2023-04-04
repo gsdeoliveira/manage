@@ -278,7 +278,8 @@ header, section, footer {
     background-repeat: no-repeat;
     background-position: top;
     display: flex;
-    padding: 7rem 3rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     justify-content: space-between;
     margin-top: 30rem;
 }
